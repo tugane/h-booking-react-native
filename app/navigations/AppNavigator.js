@@ -6,7 +6,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import HomeNavigator from './HomeNavigator';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 function AppNavigator() {
     return (
