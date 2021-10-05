@@ -3,16 +3,16 @@ import tw from "tailwind-react-native-classnames";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Favoratebutton from "./FavorateButton";
 
-function HotelInfomation({ navigation }) {
+function HotelInfomation({ navigation, hotel }) {
   return (
     <>
-      <View style={[tw`bg-black`, { height: 400 }]}>
-        <Image
-          style={tw`w-full h-full opacity-70`}
-          source={require("../assets/hotels/h1.jpg")}
-        />
-        <View style={tw`p-4 absolute mt-6 w-full`}>
+      <View style={[tw`bg-black`, { maxHeight: 500 }]}>
+        <Image style={tw`w-full h-full opacity-70`} source={hotel.image} />
+        <View
+          style={tw`p-4 pb-32 absolute mt-6 w-full  h-full justify-between`}
+        >
           <View style={tw`justify-between flex-row w-full`}>
             <TouchableOpacity
               onPress={() => navigation.goBack()}
@@ -24,18 +24,13 @@ function HotelInfomation({ navigation }) {
                 size={30}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={tw`rounded-lg bg-gray-700 p-2 opacity-70`}>
-              <MaterialCommunityIcons
-                color={colors.light}
-                name="bookmark-outline"
-                size={30}
-              />
-            </TouchableOpacity>
+            <Favoratebutton
+              style={tw`rounded-lg bg-gray-700 p-2 opacity-70`}
+              id
+            />
           </View>
-          <View style={tw`mt-24`}>
-            <Text style={tw`text-3xl text-white font-bold`}>
-              Hotel Flower Blooms so Far so Good
-            </Text>
+          <View style={tw``}>
+            <Text style={tw`text-xl text-white font-bold`}>{hotel.name}</Text>
             <View style={tw`flex-row items-center mt-5`}>
               <View
                 style={[

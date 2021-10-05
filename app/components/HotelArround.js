@@ -5,14 +5,14 @@ import {
   Image,
   StyleSheet,
   Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SectionHeader from "../components/SectionHeader";
 import colors from "../config/colors";
 import Button from "./Button";
+import Favoratebutton from "./FavorateButton";
 function HotelArround({ data, navigation }) {
   return (
     <>
@@ -23,18 +23,17 @@ function HotelArround({ data, navigation }) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("hotelDetail")}
+            onPress={() => navigation.navigate("hotelDetail", { hotel: item })}
           >
             <View style={[tw`p-2 rounded-lg my-2 bg-white`]}>
               <View style={tw`rounded-lg overflow-hidden max-h-40`}>
                 <Image style={tw`w-full h-full`} source={item.image} />
-                <TouchableOpacity style={tw`absolute self-end`}>
-                  <MaterialCommunityIcons
-                    size={50}
-                    color={colors.yellow}
-                    name="bookmark-outline"
-                  />
-                </TouchableOpacity>
+                <Favoratebutton
+                  style={tw`absolute self-end`}
+                  size={50}
+                  color={colors.yellow}
+                  name="bookmark-outline"
+                />
               </View>
               <View style={tw`p-2`}>
                 <View style={tw`flex-row justify-between`}>
@@ -97,7 +96,9 @@ function HotelArround({ data, navigation }) {
     </>
   );
 }
+
 const styles = StyleSheet.create({
   container: {},
 });
+
 export default HotelArround;

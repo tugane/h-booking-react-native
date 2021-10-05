@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import {
+  Dimensions,
   FlatList,
   Image,
   Modal,
@@ -15,9 +16,9 @@ import Screen from "../components/Screen";
 import HorizontalItems from "../components/HorizontalItems";
 import HotelOverview from "../components/HotelOverview";
 import HotelInfo from "../components/HotelInfo";
-import Button from "../components/Button";
 import HotelRoomsGallery from "./HotelRoomsGallery";
 import SectionHeader from "../components/SectionHeader";
+import Button from "../components/Button";
 
 const items = [
   {
@@ -29,10 +30,6 @@ const items = [
     name: "Rooms",
   },
   {
-    id: 4,
-    name: "Prices",
-  },
-  {
     id: 3,
     name: "Review",
   },
@@ -42,69 +39,32 @@ const items = [
   },
 ];
 
-const images = [
-  {
-    id: 1,
-    imageUrl: require("../assets/rooms/r1.jpg"),
-  },
-  {
-    id: 2,
-    imageUrl: require("../assets/rooms/r2.jpg"),
-  },
-  {
-    id: 3,
-    imageUrl: require("../assets/rooms/r3.jpg"),
-  },
-  {
-    id: 4,
-    imageUrl: require("../assets/rooms/r4.jpg"),
-  },
-  {
-    id: 5,
-    imageUrl: require("../assets/rooms/r5.jpg"),
-  },
-  {
-    id: 6,
-    imageUrl: require("../assets/rooms/r6.jpg"),
-  },
-  {
-    id: 7,
-    imageUrl: require("../assets/rooms/r7.jpg"),
-  },
-  {
-    id: 8,
-    imageUrl: require("../assets/rooms/r8.jpg"),
-  },
-  {
-    id: 9,
-    imageUrl: require("../assets/rooms/r9.jpg"),
-  },
-  {
-    id: 10,
-    imageUrl: require("../assets/rooms/r10.jpg"),
-  },
-  {
-    id: 11,
-    imageUrl: require("../assets/rooms/r11.jpg"),
-  },
-];
-const IMAGE_SIZE = 80;
 const SPACING = 10;
-function HotelDetailsScreen({ navigation }) {
+const screen = Dimensions.get("screen");
+
+function HotelDetailsScreen({ navigation, route }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showGallery, setShowGallery] = useState(false);
   const thumbRef = useRef();
 
+  const [roomItemWidth, setRoomItemWidth] = useState(screen.width - 120);
+
   const changeActiveIndex = (index) => {
     setActiveIndex(index);
     setShowGallery(true);
+    thumbRef?.current?.scrollToIndex({
+      index: index,
+      animated: true,
+    });
   };
+
+  const sectionChange = (item) => {};
 
   return (
     <Screen>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          <HotelInfo navigation={navigation} />
+          <HotelInfo hotel={route.params.hotel} navigation={navigation} />
           <View style={tw`-mt-16`}>
             <HorizontalItems
               itemTextStles={tw`text-white`}
@@ -112,38 +72,67 @@ function HotelDetailsScreen({ navigation }) {
               selectedItemBackgroundColor={colors.secondary}
               itemContainerStyle={tw`mb-2 mt-0 pr-3`}
               items={items}
-              selectedItem={(item) => console.log(item)}
+              selectedItem={(item) => sectionChange(item)}
               itemStyles={[
                 tw`ml-4 p-2 rounded`,
                 { backgroundColor: colors.medium },
               ]}
             />
-            <HotelOverview />
+            <HotelOverview hotel={route.params.hotel} />
             <View style={tw`px-4 mb-4`}>
-              <SectionHeader title="Rooms" style={tw`my-2`} />
+              <SectionHeader title="Rooms" style={tw`my-4`} />
               <FlatList
                 ref={thumbRef}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                data={images}
+                data={route.params.hotel.rooms}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item, index }) => (
-                  <TouchableOpacity onPress={() => changeActiveIndex(index)}>
-                    <Image
-                      style={{
-                        height: IMAGE_SIZE,
-                        width: IMAGE_SIZE,
-                        borderRadius: 12,
-                        marginRight: SPACING,
-                        borderWidth: 4,
-                        borderColor:
-                          activeIndex === index
-                            ? colors.secondary
-                            : colors.transparent,
-                      }}
-                      source={item.imageUrl}
-                    />
-                  </TouchableOpacity>
+                  <View style={{ width: roomItemWidth, marginRight: SPACING }}>
+                    <TouchableOpacity onPress={() => changeActiveIndex(index)}>
+                      <Image
+                        style={[
+                          tw`h-44`,
+                          {
+                            width: "100%",
+                            borderRadius: 12,
+                            borderWidth: 4,
+                            borderColor:
+                              activeIndex === index
+                                ? colors.secondary
+                                : colors.transparent,
+                          },
+                        ]}
+                        source={item.imageUrl}
+                      />
+                      <Text
+                        style={{ marginVertical: 5, fontSize: 15 }}
+                        numberOfLines={1}
+                      >
+                        {item.title}
+                      </Text>
+                    </TouchableOpacity>
+                    <View style={tw`w-full flex-row justify-between`}>
+                      <View style={tw`w-4/12 mt-3`}>
+                        <Text style={tw`text-base text-gray-400`}>
+                          Start at
+                        </Text>
+                        <View style={tw`flex-row`}>
+                          <Text style={tw`text-2xl mr-2 text-black font-bold`}>
+                            ${item.price}
+                          </Text>
+                          <Text style={tw`text-base text-gray-400`}>
+                            /night
+                          </Text>
+                        </View>
+                      </View>
+                      <Button
+                        style={tw`w-6/12 text-white mb-0 mr-0`}
+                        backgroundColor={colors.primary}
+                        text="Book"
+                      />
+                    </View>
+                  </View>
                 )}
               />
               <Modal visible={showGallery}>
@@ -151,7 +140,7 @@ function HotelDetailsScreen({ navigation }) {
                   initialActiveIndex={activeIndex}
                   onSetActiveIndex={(index) => changeActiveIndex(index)}
                   onClose={() => setShowGallery(false)}
-                  images={images}
+                  rooms={route.params.hotel.rooms}
                 />
               </Modal>
             </View>

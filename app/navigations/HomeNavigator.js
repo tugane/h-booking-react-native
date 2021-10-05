@@ -22,7 +22,7 @@ function HomeNavigator() {
       <Stack.Screen
         name="hotelDetail"
         component={HotelDetailsScreen}
-        options={{ presentation: "fullScreenModal" }}
+        options={{ presentation: "card" }}
       />
       <Stack.Screen
         name="hotelRoomsGallery"

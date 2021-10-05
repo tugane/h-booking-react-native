@@ -6,13 +6,13 @@ import {
   Image,
   StyleSheet,
   Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SectionHeader from "./SectionHeader";
 import colors from "../config/colors";
+import Favoratebutton from "./FavorateButton";
 
 function RecommendedHotels({ data, navigation }) {
   const [hotelItemWidth, setHoteItemWidth] = useState(() => {
@@ -30,29 +30,27 @@ function RecommendedHotels({ data, navigation }) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("hotelDetail")}
+            onPress={() => navigation.navigate("hotelDetail", { hotel: item })}
           >
             <View
               style={[
-                tw`p-2 rounded-lg mr-2 flex-row bg-white`,
+                tw`p-2 rounded-lg mr-2 flex-row bg-white h-52`,
                 { width: hotelItemWidth },
               ]}
             >
-              <View style={tw`w-1/3 rounded-lg overflow-hidden max-h-40`}>
+              <View style={tw`w-1/3 rounded-lg overflow-hidden h-full`}>
                 <Image style={tw`w-full h-full`} source={item.image} />
               </View>
               <View style={tw`w-2/3 p-2`}>
                 <View style={tw`flex-row justify-between`}>
-                  <Text style={tw`font-bold text-xl text-black w-10/12`}>
+                  <Text style={tw`font-bold text-lg text-black w-10/12`}>
                     {item.name}
                   </Text>
-                  <TouchableOpacity>
-                    <MaterialCommunityIcons
-                      size={30}
-                      color={colors.medium}
-                      name="bookmark-outline"
-                    />
-                  </TouchableOpacity>
+                  <Favoratebutton
+                    name="bookmark-outline"
+                    size={30}
+                    color={colors.medium}
+                  />
                 </View>
                 <View style={tw`flex-row mt-1`}>
                   <MaterialCommunityIcons
