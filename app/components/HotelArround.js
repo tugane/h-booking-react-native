@@ -13,6 +13,7 @@ import SectionHeader from "../components/SectionHeader";
 import colors from "../config/colors";
 import Button from "./Button";
 import Favoratebutton from "./FavorateButton";
+import StarRating from "react-native-star-rating";
 function HotelArround({ data, navigation }) {
   return (
     <>
@@ -42,30 +43,13 @@ function HotelArround({ data, navigation }) {
                   </Text>
                 </View>
                 <View style={tw`flex-row`}>
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
+                  <StarRating
+                    disabled={true}
+                    maxStars={5}
+                    rating={item.averageRatings}
+                    starSize={20}
+                    fullStarColor={colors.yellow}
+                    selectedStar={(rating) => console.log(rating)}
                   />
                 </View>
                 <View style={tw`flex-row items-end justify-between flex-1`}>

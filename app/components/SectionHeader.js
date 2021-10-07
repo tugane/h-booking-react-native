@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import colors from "../config/colors";
 
 function SectionHeader({ title, subTitle = null, style }) {
   return (
@@ -13,8 +14,12 @@ function SectionHeader({ title, subTitle = null, style }) {
         style,
       ]}
     >
-      <Text style={{ fontSize: 20, fontWeight: "700" }}>{title}</Text>
-      <Text style={{ fontSize: 15, fontWeight: "500" }}>{subTitle}</Text>
+      <Text style={{ fontSize: 20, fontWeight: "700", color: colors.medium }}>
+        {title}
+      </Text>
+      <Text style={{ fontSize: 15, fontWeight: "500", color: colors.medium }}>
+        {subTitle}
+      </Text>
     </View>
   );
 }

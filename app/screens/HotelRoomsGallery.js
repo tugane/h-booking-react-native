@@ -76,8 +76,12 @@ function HotelRoomsGallery({
           bottom: IMAGE_SIZE + IMAGE_SIZE,
           zIndex: 2,
           position: "absolute",
-          padding: 20,
+          backgroundColor: colors.medium,
+          padding: 10,
           borderRadius: 20,
+          marginHorizontal: 10,
+          alignSelf: "center",
+          opacity: 0.8,
         }}
       >
         <Text
@@ -85,7 +89,7 @@ function HotelRoomsGallery({
             color: colors.light,
             fontWeight: "700",
             textAlign: "justify",
-            fontSize: 20,
+            fontSize: 15,
           }}
         >
           {rooms[activeIndex].title}

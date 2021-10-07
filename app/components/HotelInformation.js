@@ -31,27 +31,6 @@ function HotelInfomation({ navigation, hotel }) {
           </View>
           <View style={tw``}>
             <Text style={tw`text-xl text-white font-bold`}>{hotel.name}</Text>
-            <View style={tw`flex-row items-center mt-5`}>
-              <View
-                style={[
-                  tw`text-base p-2 mr-3 rounded`,
-                  { backgroundColor: colors.primary },
-                ]}
-              >
-                <Text style={tw`text-white`}>5 Star Hotel</Text>
-              </View>
-              <View style={tw`flex-row justify-center items-center`}>
-                <MaterialCommunityIcons
-                  name="star"
-                  size={20}
-                  color={colors.yellow}
-                />
-                <Text style={[tw`text-lg font-bold`, { color: colors.yellow }]}>
-                  k 8,6
-                </Text>
-                <Text style={tw`text-lg text-gray-200 `}>/17.851</Text>
-              </View>
-            </View>
           </View>
         </View>
       </View>

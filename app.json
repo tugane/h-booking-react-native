@@ -13,11 +13,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.toonation.h-booking",
+      "config": {
+        "googleMapsApiKey": "AIzaSyA4l6DH5-pZiEiO6mYOf21gYIPveDUO198"
+      }
     },
     "android": {
       "adaptiveIcon": {

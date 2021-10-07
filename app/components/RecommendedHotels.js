@@ -13,6 +13,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SectionHeader from "./SectionHeader";
 import colors from "../config/colors";
 import Favoratebutton from "./FavorateButton";
+import StarRating from "react-native-star-rating";
 
 function RecommendedHotels({ data, navigation }) {
   const [hotelItemWidth, setHoteItemWidth] = useState(() => {
@@ -43,7 +44,10 @@ function RecommendedHotels({ data, navigation }) {
               </View>
               <View style={tw`w-2/3 p-2`}>
                 <View style={tw`flex-row justify-between`}>
-                  <Text style={tw`font-bold text-lg text-black w-10/12`}>
+                  <Text
+                    style={tw`font-bold text-lg text-black w-10/12`}
+                    numberOfLines={3}
+                  >
                     {item.name}
                   </Text>
                   <Favoratebutton
@@ -53,30 +57,13 @@ function RecommendedHotels({ data, navigation }) {
                   />
                 </View>
                 <View style={tw`flex-row mt-1`}>
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
-                  />
-                  <MaterialCommunityIcons
-                    size={20}
-                    color={colors.yellow}
-                    name="star"
+                  <StarRating
+                    disabled={true}
+                    maxStars={5}
+                    rating={item.averageRatings}
+                    starSize={20}
+                    fullStarColor={colors.yellow}
+                    selectedStar={(rating) => console.log(rating)}
                   />
                 </View>
                 <View

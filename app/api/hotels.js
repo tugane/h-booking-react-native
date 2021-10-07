@@ -78,53 +78,57 @@ const reviews = [
   {
     id: 1,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 4.5,
     price: 228,
-    message: "Et id commodo magna ad incididunt proident.",
+    message:
+      "Reprehenderit culpa minim irure officia velit minim id proident est ut id. Ullamco ut pariatur nostrud mollit duis aute laboris dolor enim consequat occaecat sunt dolor. Reprehenderit id nulla dolor amet officia proident tempor Lorem eiusmod fugiat nulla tempor. Ipsum enim labore et ad laboris fugiat aliqua Lorem deserunt consequat anim pariatur in proident.",
     userName: "Sint elit ea in magna fugiat esse.",
-    title:
-      "Anim anim est esse est esse culpa sunt velit occaecat Lorem consectetur ipsum ad amet.",
+    title: "Anim anim Lorem consectetur ipsum ad amet.",
   },
   {
     id: 2,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 2,
     price: 224,
     message:
-      "Quis anim sunt magna reprehenderit officia eu mollit ad nostrud excepteur.",
+      "Eu aute cillum dolor eu veniam nisi do Lorem deserunt fugiat ex. Officia est laborum et sit nostrud eu mollit quis excepteur aliqua tempor. Lorem commodo do pariatur laboris anim proident.",
     userName: "Magna labore qui",
-    title:
-      "Exercitation ea sit non nostrud nisi elit et laborum consequat ad aliquip.",
+    title: "Exercitation laborum consequat ad aliquip.",
   },
   {
     id: 3,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 3.5,
     price: 222,
-    message: "Ullamco amet incididunt anim duis ut nisi esse ipsum.",
+    message:
+      "Veniam exercitation dolore enim culpa id adipisicing in esse laborum magna esse proident veniam duis. Adipisicing ipsum dolore voluptate excepteur do id do magna duis. Non eiusmod adipisicing irure irure voluptate sunt dolore culpa irure aute consectetur. Eu do amet sint consequat dolor fugiat ea reprehenderit. Nisi veniam amet proident quis ipsum laborum consectetur. Cupidatat adipisicing veniam culpa nulla commodo dolore mollit velit in mollit esse ex culpa non. Tempor qui aute consectetur enim aliquip mollit tempor occaecat labore do velit eu id.",
     userName: "Anim proident ",
-    title:
-      "Minim veniam tempor mollit nisi deserunt exercitation incididunt anim et ipsum aute tempor eu.",
+    title: "Minim anim et ipsum aute tempor eu.",
   },
   {
     id: 4,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 3,
     price: 224,
     message:
-      "Duis deserunt occaecat minim id reprehenderit eu enim duis irure consequat.",
+      "Aute nisi eiusmod sint consequat proident reprehenderit. Anim officia duis dolor est voluptate mollit consectetur non eiusmod consectetur ad laboris sunt. Incididunt minim cupidatat ex pariatur. Amet in nisi Lorem pariatur tempor ipsum ipsum cillum ad adipisicing velit aliquip deserunt. Aute quis nulla proident deserunt quis ea cillum veniam quis ex eu reprehenderit id. Magna cillum deserunt ad excepteur id nulla id deserunt amet labore. Veniam nostrud dolore reprehenderit est esse ea amet quis ipsum.",
     userName: "Et pariatur",
-    title:
-      "Deserunt proident exercitation aliquip cupidatat est adipisicing incididunt est magna laboris eiusmod labore eiusmod.",
+    title: "Deserunt laboris eiusmod labore eiusmod.",
   },
   {
     id: 5,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 4,
     price: 133,
     message:
-      "Ea in excepteur est mollit commodo magna dolore sunt consequat ullamco amet.",
+      "Qui exercitation duis sit non voluptate ex in occaecat laboris quis. Fugiat eu nulla nisi ex dolor nostrud consectetur dolore officia ea. Esse ut anim veniam dolor velit quis consequat ipsum anim minim amet nostrud. Excepteur deserunt Lorem magna qui nostrud anim sit eiusmod nulla irure duis ex officia fugiat. Aliqua occaecat nulla officia qui aliquip id duis dolore cupidatat culpa. Minim deserunt dolore voluptate mollit veniam excepteur enim voluptate sint culpa dolor sunt dolore non.",
     userName: "Duis dolor",
-    title: "Nostrud dolore sint ipsum incididunt incididunt nisi.",
+    title: "Nostrud incididunt incididunt nisi.",
   },
   {
     id: 6,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 3,
     price: 324,
     message:
       "Qui ullamco id dolor consectetur dolor duis commodo occaecat velit dolore Lorem labore in deserunt.",
@@ -134,47 +138,52 @@ const reviews = [
   {
     id: 7,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 5,
     price: 120,
-    message: "Culpa elit eu ad mollit eu.",
+    message:
+      "Duis deserunt eu in ea aute ipsum eu cupidatat incididunt qui excepteur quis irure et. Consequat amet fugiat ea dolore ut. Aliquip voluptate commodo nostrud mollit nisi commodo ea aute reprehenderit exercitation. Deserunt cillum id nostrud in.",
     userName: "Sunt aliquip",
     title: "Ut ad exercitation et ipsum.",
   },
   {
     id: 8,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 4,
     price: 525,
-    message: "Fugiat laborum culpa exercitation et id.",
+    message:
+      "Nisi cillum pariatur pariatur proident quis eiusmod proident. Consectetur consectetur amet adipisicing qui proident nisi culpa voluptate laborum exercitation. Culpa reprehenderit culpa tempor fugiat elit esse est deserunt proident.",
     userName: "Qui adipisicing",
-    title:
-      "Labore reprehenderit qui do nostrud commodo aute quis sunt exercitation consectetur eiusmod Lorem deserunt.",
+    title: "Labore reprehenderit Lorem deserunt.",
   },
   {
     id: 9,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 3.5,
     price: 226,
     message:
-      "Proident et quis exercitation voluptate eu Lorem nostrud sint nulla.",
+      "Occaecat incididunt eiusmod anim consectetur Lorem cillum. Nulla occaecat occaecat incididunt officia exercitation elit occaecat elit fugiat enim pariatur sunt Lorem. Ea eu deserunt dolor non non id mollit eu non reprehenderit. Eiusmod anim ad consequat fugiat qui non.",
     userName: "Enim sunt",
-    title:
-      "Laborum labore quis tempor ea officia aliqua do nisi duis dolor sint duis enim.",
+    title: "Laborum labore quis tempor duis enim.",
   },
   {
     id: 10,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 2.5,
     price: 300,
-    message: "Deserunt ea deserunt Lorem sit.",
+    message:
+      "Aliqua culpa ut ipsum anim nostrud tempor do. Ullamco ipsum consectetur amet ex. Incididunt qui occaecat deserunt dolore deserunt. Reprehenderit voluptate est anim dolore culpa deserunt et proident deserunt ullamco laboris pariatur aliqua. Cillum ipsum velit nostrud consectetur aliquip irure commodo.",
     userName: "Elit Lorem",
-    title:
-      "Occaecat sint nostrud id nostrud nisi voluptate sint sunt voluptate nulla exercitation sit.",
+    title: "Occaecat sint nostrud id nostrud nisi.",
   },
   {
     id: 11,
     userAvatar: require("../assets/avatars/user.png"),
+    rating: 3,
     price: 259,
-    message: "Magna ex aliquip do aliquip esse est nulla voluptate.",
+    message:
+      "Laborum aliquip amet consectetur commodo excepteur anim qui. Culpa pariatur velit incididunt laborum. Velit irure exercitation exercitation est minim ex. Consectetur duis cillum reprehenderit irure nostrud. Sunt id id culpa qui qui minim fugiat velit. Eiusmod eiusmod esse sint excepteur sunt qui ipsum reprehenderit occaecat aliqua ad id veniam ullamco. Ex dolore mollit Lorem proident adipisicing sit enim laboris.",
     userName: "Adipisicing quis",
-    title:
-      "Nisi excepteur adipisicing enim eu nisi incididunt laborum ea consequat incididunt.",
+    title: "Nisi excepteur adipisicing.",
   },
 ];
 export default [
@@ -187,6 +196,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 3.5,
+    totalReviews: 12.342,
     image: require("../assets/hotels/h1.jpg"),
     rooms,
     reviews,
@@ -202,6 +213,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 4.0,
+    totalReviews: 32.342,
     image: require("../assets/hotels/h2.jpg"),
     rooms,
     reviews,
@@ -217,6 +230,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 3.6,
+    totalReviews: 16.342,
     image: require("../assets/hotels/h3.jpg"),
     rooms,
     reviews,
@@ -232,6 +247,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 3.8,
+    totalReviews: 11.332,
     image: require("../assets/hotels/h4.jpg"),
     rooms,
     reviews,
@@ -247,6 +264,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 5,
+    totalReviews: 19.398,
     image: require("../assets/hotels/h5.jpg"),
     rooms,
     reviews,
@@ -262,6 +281,8 @@ export default [
     address: "1007 First Ave.,Seattle, WA, 98104",
     near: "Nearest Station: University St.(0.2 mi)",
     website: "tugane-hotel.com",
+    averageRatings: 1.5,
+    totalReviews: 2.346,
     image: require("../assets/hotels/h6.jpg"),
     rooms,
     reviews,
