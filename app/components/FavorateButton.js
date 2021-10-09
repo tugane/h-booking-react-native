@@ -8,7 +8,6 @@ const Favoratebutton = ({
   name = "bookmark-outline",
   favoratedName = "bookmark",
   color = `${colors.yellow}`,
-  id,
 }) => {
   const [favorate, setFavorate] = useState(false);
 

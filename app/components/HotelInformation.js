@@ -1,43 +1,32 @@
 import React from "react";
 import tw from "tailwind-react-native-classnames";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Image, Text, View } from "react-native";
 import Favoratebutton from "./FavorateButton";
+import Gobackbutton from "./GoBackButton";
 
 function HotelInfomation({ navigation, hotel }) {
   return (
     <>
       <View style={[tw`bg-black`, { maxHeight: 500 }]}>
-        <Image style={tw`w-full h-full opacity-70`} source={hotel.image} />
+        <Image style={tw`w-full h-full opacity-90`} source={hotel.image} />
         <View
           style={tw`p-4 pb-32 absolute mt-6 w-full  h-full justify-between`}
         >
           <View style={tw`justify-between flex-row w-full`}>
-            <TouchableOpacity
+            <Gobackbutton
+              style={tw`rounded-lg bg-gray-700 p-2 opacity-90`}
               onPress={() => navigation.goBack()}
-              style={tw`rounded-lg bg-gray-700 p-2 opacity-70`}
-            >
-              <MaterialCommunityIcons
-                color={colors.light}
-                name="arrow-left"
-                size={30}
-              />
-            </TouchableOpacity>
-            <Favoratebutton
-              style={tw`rounded-lg bg-gray-700 p-2 opacity-70`}
-              id
             />
+            <Favoratebutton style={tw`rounded-lg bg-gray-700 p-2 opacity-90`} />
           </View>
           <View style={tw``}>
-            <Text style={tw`text-xl text-white font-bold`}>{hotel.name}</Text>
+            <Text style={tw`text-2xl text-white font-bold`} numberOfLines={3}>
+              {hotel.name}
+            </Text>
           </View>
         </View>
       </View>
     </>
   );
 }
-const styles = StyleSheet.create({
-  container: {},
-});
 export default HotelInfomation;

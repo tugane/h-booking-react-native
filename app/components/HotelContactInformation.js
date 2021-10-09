@@ -1,9 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { View, StyleSheet } from "react-native";
 import colors from "../config/colors";
 import SectionHeader from "./SectionHeader";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import Apptext from "./AppText";
 const Hotelcontactinformation = ({ hotel }) => {
   const initialRegion = {
     latitude: 37.78825,
@@ -18,81 +18,29 @@ const Hotelcontactinformation = ({ hotel }) => {
         style={{ marginLeft: 15, marginTop: 15 }}
       />
       <View style={styles.container}>
-        <View style={styles.addressWrap}>
-          <MaterialCommunityIcons
-            name="phone"
-            size={35}
-            color={colors.secondary}
-          />
-          <Text
-            style={{
-              marginLeft: 15,
-              color: colors.medium,
-              fontSize: 17,
-              fontWeight: "500",
-            }}
-          >
-            {hotel.phone}
-          </Text>
-        </View>
-        <View style={styles.addressWrap}>
-          <MaterialCommunityIcons
-            name="map-marker"
-            size={35}
-            color={colors.secondary}
-          />
-          <Text
-            style={{
-              marginLeft: 15,
-              color: colors.medium,
-              fontSize: 17,
-              fontWeight: "500",
-            }}
-          >
-            {hotel.address}
-          </Text>
-        </View>
-        <View style={styles.addressWrap}>
-          <MaterialCommunityIcons
-            name="train"
-            size={35}
-            color={colors.secondary}
-          />
-          <Text
-            style={{
-              marginLeft: 15,
-              color: colors.medium,
-              fontSize: 17,
-              fontWeight: "500",
-            }}
-          >
-            {hotel.near}
-          </Text>
-        </View>
-        <View style={styles.addressWrap}>
-          <MaterialCommunityIcons
-            name="web"
-            size={35}
-            color={colors.secondary}
-          />
-          <Text
-            style={{
-              marginLeft: 15,
-              color: colors.medium,
-              fontSize: 17,
-              fontWeight: "500",
-            }}
-          >
-            {hotel.website}
-          </Text>
-        </View>
+        <Apptext
+          iconName="phone"
+          text={hotel.phone}
+          style={styles.addressWrap}
+        />
+        <Apptext
+          iconName="map-marker"
+          text={hotel.address}
+          style={styles.addressWrap}
+        />
+        <Apptext
+          iconName="train"
+          text={hotel.near}
+          style={styles.addressWrap}
+        />
+        <Apptext
+          iconName="web"
+          text={hotel.website}
+          style={styles.addressWrap}
+        />
       </View>
       <View style={styles.mapContainer}>
         <MapView
-          showsMyLocationButton={true}
-          showsBuildings={true}
-          showsCompass={true}
-          showsScale={true}
           initialRegion={initialRegion}
           provider={PROVIDER_GOOGLE}
           style={styles.map}

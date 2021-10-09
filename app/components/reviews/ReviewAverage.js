@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 
 import StarRating from "react-native-star-rating";
 import colors from "../../config/colors";
+import Totalreviews from "./TotalReviews";
 const Reviewaverage = ({ averageRatings, totalReviews }) => {
   return (
     <>
@@ -21,19 +22,11 @@ const Reviewaverage = ({ averageRatings, totalReviews }) => {
           {averageRatings}
         </Text>
       </View>
-      <View style={{ marginVertical: 10 }}>
-        <StarRating
-          disabled={true}
-          maxStars={5}
-          rating={averageRatings}
-          starSize={20}
-          fullStarColor={colors.yellow}
-          selectedStar={(rating) => console.log(rating)}
-        />
-        <Text style={{ fontSize: 17, color: colors.medium, fontWeight: "500" }}>
-          {totalReviews} Reviews
-        </Text>
-      </View>
+      <Totalreviews
+        horizontal={false}
+        totalReviews={totalReviews}
+        averageRatings={averageRatings}
+      />
     </>
   );
 };
