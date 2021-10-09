@@ -1,5 +1,11 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import colors from "../config/colors";
 import Screen from "../components/Screen";
@@ -28,7 +34,7 @@ const items = [
     name: "Photos",
   },
 ];
-
+const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
 function HotelDetailsScreen({ navigation, route }) {
   const hotel = route.params.hotel;
 
@@ -36,29 +42,35 @@ function HotelDetailsScreen({ navigation, route }) {
 
   return (
     <Screen>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <HotelInfo hotel={hotel} navigation={navigation} />
-          <View style={tw`-mt-16`}>
-            <HorizontalItems
-              itemTextStles={tw`text-white`}
-              initialActiveItemIndex={0}
-              selectedItemBackgroundColor={colors.secondary}
-              itemContainerStyle={tw`mb-2 mt-0 pr-3`}
-              items={items}
-              selectedItem={(item) => sectionChange(item)}
-              itemStyles={[
-                tw`ml-4 p-2 rounded`,
-                { backgroundColor: colors.medium },
-              ]}
-            />
-            <HotelOverview hotel={hotel} />
-            <HotelRooms route={route} />
-            <Hotelcontactinformation hotel={hotel} />
-            <HotelReviews hotel={hotel} />
+      <KeyboardAvoidingView
+        behavior="position"
+        keyboardVerticalOffset={keyboardVerticalOffset}
+        enabled
+      >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.container}>
+            <HotelInfo hotel={hotel} navigation={navigation} />
+            <View style={tw`-mt-16`}>
+              <HorizontalItems
+                itemTextStles={tw`text-white`}
+                initialActiveItemIndex={0}
+                selectedItemBackgroundColor={colors.secondary}
+                itemContainerStyle={tw`mb-2 mt-0 pr-3`}
+                items={items}
+                selectedItem={(item) => sectionChange(item)}
+                itemStyles={[
+                  tw`ml-4 p-2 rounded`,
+                  { backgroundColor: colors.medium },
+                ]}
+              />
+              <HotelOverview hotel={hotel} />
+              <HotelRooms route={route} />
+              <Hotelcontactinformation hotel={hotel} />
+              <HotelReviews hotel={hotel} />
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </Screen>
   );
 }

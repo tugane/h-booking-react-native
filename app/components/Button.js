@@ -1,8 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import tw from "tailwind-react-native-classnames";
 
-function Button({ backgroundColor, width, color, style, text, onPress }) {
+function Button({
+  backgroundColor,
+  width,
+  color,
+  style,
+  text,
+  textStyle,
+  onPress,
+}) {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -12,7 +20,14 @@ function Button({ backgroundColor, width, color, style, text, onPress }) {
         style,
       ]}
     >
-      <Text style={tw`font-bold text-lg text-white`}>{text}</Text>
+      <Text
+        style={[
+          tw`font-bold text-lg text-white`,
+          { textTransform: "capitalize", textStyle },
+        ]}
+      >
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 }
