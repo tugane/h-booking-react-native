@@ -2,8 +2,8 @@ import React from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import tw from "tailwind-react-native-classnames";
 import colors from "../../config/colors";
-import Button from "../Button";
-import Pricepernight from "../PricePerNight";
+import Button from "../others/Button";
+import Pricepernight from "../others/PricePerNight";
 
 const Room = ({ onImagePress, onBook, roomItemWidth, item, SPACING }) => {
   return (
@@ -45,7 +45,7 @@ const Room = ({ onImagePress, onBook, roomItemWidth, item, SPACING }) => {
           <Pricepernight price={item.price} />
         </View>
         <Button
-          onPress={onBook(item)}
+          onPress={() => onBook(item)}
           style={tw`w-6/12 text-white mb-0 mr-0`}
           backgroundColor={colors.primary}
           text="Book"

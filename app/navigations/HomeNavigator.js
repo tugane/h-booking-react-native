@@ -3,7 +3,7 @@ import React from "react";
 import FilterScreen from "../screens/FilterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import HotelDetailsScreen from "../screens/HotelDetailsScreen";
-import HotelRoomsGallery from "../screens/HotelRoomsGallery";
+import HotelRoomsGallery from "../components/room/HotelRoomsGallery";
 
 const Stack = createNativeStackNavigator();
 

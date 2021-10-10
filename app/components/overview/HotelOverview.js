@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import tw from "tailwind-react-native-classnames";
-import { Text, TouchableOpacity, View } from "react-native";
-import colors from "../config/colors";
-import SectionHeader from "./SectionHeader";
-import StarRating from "react-native-star-rating";
-import Pricepernight from "./PricePerNight";
-import Showmore from "./ShowMore";
-import Totalreviews from "./reviews/TotalReviews";
+import { Text, View } from "react-native";
+import SectionHeader from "../header/SectionHeader";
+import Pricepernight from "../others/PricePerNight";
+import Showmore from "../others/ShowMore";
+import Totalreviews from "../review/TotalReviews";
 
-function HotelOverview({ hotel }) {
+function HotelOverview({ hotel }, ref) {
   const [toggleDescription, setToggleDescription] = useState(false);
   return (
     <>
-      <View style={tw`px-4 pt-4 rounded-t-2xl bg-white`}>
+      <View ref={ref} style={tw`px-4 pt-4 rounded-t-2xl bg-white`}>
         <SectionHeader title="Overview" style={tw`mb-2`} />
         <View style={tw`my-2`}>
           <Text style={tw`text-gray-700`}>5 Star Hotel</Text>
@@ -36,4 +34,4 @@ function HotelOverview({ hotel }) {
     </>
   );
 }
-export default HotelOverview;
+export default forwardRef(HotelOverview);

@@ -8,7 +8,7 @@ function HomeHeader() {
       <View style={tw`w-full h-60 bg-gray-900`}>
         <Image
           style={tw`h-full w-full opacity-70`}
-          source={require("../assets/hotels/h6.jpg")}
+          source={require("../../assets/hotels/h6.jpg")}
         />
       </View>
       <View style={tw`p-4 absolute w-full h-full`}>
@@ -24,7 +24,7 @@ function HomeHeader() {
           <View style={tw`h-10 w-10 overflow-hidden rounded-full`}>
             <Image
               style={tw`h-full w-full`}
-              source={require("../assets/tugane.jpg")}
+              source={require("../../assets/tugane.jpg")}
             />
           </View>
         </View>

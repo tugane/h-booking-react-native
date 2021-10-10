@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Screen from "../components/Screen";
+import Screen from "../components/others/Screen";
 import tw from "tailwind-react-native-classnames";
 import colors from "../config/colors";
 import Slider from "@react-native-community/slider";
-import HorizontalItems from "../components/HorizontalItems";
-import Button from "../components/Button";
+import HorizontalItems from "../components/others/HorizontalItems";
+import Button from "../components/others/Button";
 
 const categories = [
   {

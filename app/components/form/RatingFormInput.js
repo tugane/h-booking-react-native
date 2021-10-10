@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import Errormessage from "../forms/ErrorMessage";
+import Errormessage from "./ErrorMessage";
 import StarRating from "react-native-star-rating";
 import { useFormikContext } from "formik";
 

@@ -23,7 +23,8 @@ function Button({
       <Text
         style={[
           tw`font-bold text-lg text-white`,
-          { textTransform: "capitalize", textStyle },
+          { textTransform: "capitalize" },
+          textStyle,
         ]}
       >
         {text}

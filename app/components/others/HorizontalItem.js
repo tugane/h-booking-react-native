@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 function HorizontalItem({
   onPress,

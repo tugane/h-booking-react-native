@@ -8,9 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Screen from "../components/Screen";
-import colors from "../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../../config/colors";
 const { height, width } = Dimensions.get("screen");
 const IMAGE_SIZE = 80;
 const SPACING = 10;

@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 import { Dimensions, FlatList, Modal, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
-import SectionHeader from "./SectionHeader";
-import HotelRoomsGallery from "../screens/HotelRoomsGallery";
-import Room from "./rooms/Room";
+import SectionHeader from "../header/SectionHeader";
+import Room from "./Room";
+import HotelRoomsGallery from "./HotelRoomsGallery";
 const SPACING = 10;
 const screen = Dimensions.get("screen");
 
-function HotelRooms({ route }) {
+function HotelRooms({ route }, ref) {
   const hotel = route.params.hotel;
   const [activeIndex, setActiveIndex] = useState(0);
   const [showGallery, setShowGallery] = useState(false);
@@ -25,7 +25,7 @@ function HotelRooms({ route }) {
   };
 
   return (
-    <View style={tw`px-4 mb-4`}>
+    <View ref={ref} style={tw`px-4 mb-4`}>
       <SectionHeader title="Rooms" style={tw`my-4`} />
       <FlatList
         ref={thumbRef}
@@ -37,7 +37,9 @@ function HotelRooms({ route }) {
           <Room
             item={item}
             onImagePress={() => changeActiveIndex(index)}
-            onBook={(item) => console.log(item)}
+            onBook={(item) => {
+              console.log(item);
+            }}
             roomItemWidth={roomItemWidth}
             SPACING={SPACING}
           />
@@ -55,4 +57,4 @@ function HotelRooms({ route }) {
   );
 }
 
-export default HotelRooms;
+export default forwardRef(HotelRooms);

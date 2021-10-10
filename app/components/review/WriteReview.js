@@ -3,11 +3,11 @@ import { View } from "react-native";
 import * as Yup from "yup";
 import tw from "tailwind-react-native-classnames";
 import colors from "../../config/colors";
-import SectionHeader from "../SectionHeader";
-import Forminput from "../forms/FormInput";
-import Ratingforminput from "../forms/RatingFormInput";
-import Formsubmit from "../forms/FormSubmit";
-import Form from "../forms/Form";
+import SectionHeader from "../header/SectionHeader";
+import Forminput from "../form/FormInput";
+import Ratingforminput from "../form/RatingFormInput";
+import Formsubmit from "../form/FormSubmit";
+import Form from "../form/Form";
 
 const NewReviewSchema = Yup.object().shape({
   title: Yup.string().required("Title is required").label("Title"),

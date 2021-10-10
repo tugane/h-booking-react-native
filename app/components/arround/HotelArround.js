@@ -9,10 +9,10 @@ import {
   View,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import SectionHeader from "../components/SectionHeader";
-import colors from "../config/colors";
-import Button from "./Button";
-import Favoratebutton from "./FavorateButton";
+import SectionHeader from "../header/SectionHeader";
+import colors from "../../config/colors";
+import Button from "../others/Button";
+import Favoratebutton from "../others/FavorateButton";
 import StarRating from "react-native-star-rating";
 function HotelArround({ data, navigation }) {
   return (

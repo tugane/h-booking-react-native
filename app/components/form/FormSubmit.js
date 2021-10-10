@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import React from "react";
 import colors from "../../config/colors";
-import Button from "../Button";
+import Button from "../others/Button";
 
 const Formsubmit = ({
   text,

@@ -1,12 +1,12 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import Screen from "../components/Screen";
+import Screen from "../components/others/Screen";
 import tw from "tailwind-react-native-classnames";
-import HorizontalItems from "../components/HorizontalItems";
-import HomeSearch from "../components/HomeSearch";
-import HomeHeader from "../components/HomeHeader";
-import RecommendedHotels from "../components/RecommendedHotels";
-import HotelArround from "../components/HotelArround";
+import HorizontalItems from "../components/others/HorizontalItems";
+import HomeSearch from "../components/search/HomeSearch";
+import HomeHeader from "../components/header/HomeHeader";
+import RecommendedHotels from "../components/recommended/RecommendedHotels";
+import HotelArround from "../components/arround/HotelArround";
 import hotels from "../api/hotels";
 const categories = [
   {

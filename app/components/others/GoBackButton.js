@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 const Gobackbutton = ({
   onPress,

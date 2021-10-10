@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { View, StyleSheet } from "react-native";
-import colors from "../config/colors";
-import SectionHeader from "./SectionHeader";
+import colors from "../../config/colors";
+import SectionHeader from "../header/SectionHeader";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
-import Apptext from "./AppText";
-const Hotelcontactinformation = ({ hotel }) => {
+import Apptext from "../others/AppText";
+const Hotelcontactinformation = ({ hotel }, ref) => {
   const initialRegion = {
     latitude: 37.78825,
     longitude: -122.4324,
@@ -12,12 +12,12 @@ const Hotelcontactinformation = ({ hotel }) => {
     longitudeDelta: 0.0421,
   };
   return (
-    <>
+    <View ref={ref}>
       <SectionHeader
         title="Contacts"
         style={{ marginLeft: 15, marginTop: 15 }}
       />
-      <View style={styles.container}>
+      <View ref={ref} style={styles.container}>
         <Apptext
           iconName="phone"
           text={hotel.phone}
@@ -46,7 +46,7 @@ const Hotelcontactinformation = ({ hotel }) => {
           style={styles.map}
         ></MapView>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Hotelcontactinformation;
+export default forwardRef(Hotelcontactinformation);

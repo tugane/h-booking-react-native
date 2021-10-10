@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 function SectionHeader({ title, subTitle = null, style }) {
   return (

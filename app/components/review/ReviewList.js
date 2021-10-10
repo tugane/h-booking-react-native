@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import colors from "../../config/colors";
 import SelectDropdown from "react-native-select-dropdown";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../header/SectionHeader";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
 import Reviewlistitem from "./ReviewListItem";

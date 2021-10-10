@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
-import colors from "../config/colors";
+import colors from "../../config/colors";
 
 function HomeSearch({ navigation }) {
   return (
