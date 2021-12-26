@@ -3,10 +3,10 @@ import tw from "tailwind-react-native-classnames";
 import { Image, Text, View } from "react-native";
 import Favoratebutton from "../others/FavorateButton";
 import Gobackbutton from "../others/GoBackButton";
-function HotelInfomation({ navigation, hotel }, ref) {
+function Infomation({ navigation, item }, ref) {
   return (
     <View ref={ref} style={[tw`bg-black`, { maxHeight: 500 }]}>
-      <Image style={tw`w-full h-full opacity-90`} source={hotel.image} />
+      <Image style={tw`w-full h-full opacity-90`} source={item.image} />
       <View style={tw`p-4 pb-32 absolute mt-6 w-full  h-full justify-between`}>
         <View style={tw`justify-between flex-row w-full`}>
           <Gobackbutton
@@ -17,11 +17,11 @@ function HotelInfomation({ navigation, hotel }, ref) {
         </View>
         <View style={tw``}>
           <Text style={tw`text-2xl text-white font-bold`} numberOfLines={3}>
-            {hotel.name}
+            {item.name}
           </Text>
         </View>
       </View>
     </View>
   );
 }
-export default forwardRef(HotelInfomation);
+export default forwardRef(Infomation);

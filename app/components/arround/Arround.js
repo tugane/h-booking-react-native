@@ -8,13 +8,12 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SectionHeader from "../header/SectionHeader";
 import colors from "../../config/colors";
 import Button from "../others/Button";
 import Favoratebutton from "../others/FavorateButton";
 import StarRating from "react-native-star-rating";
-function HotelArround({ data, navigation }) {
+function Arround({ data, navigation }) {
   return (
     <>
       <SectionHeader title="Arround You" subTitle="See more" />
@@ -24,7 +23,7 @@ function HotelArround({ data, navigation }) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("hotelDetail", { hotel: item })}
+            onPress={() => navigation.navigate("details", { item: item })}
           >
             <View style={[tw`p-2 rounded-lg my-2 bg-white`]}>
               <View style={tw`rounded-lg overflow-hidden max-h-40`}>
@@ -85,4 +84,4 @@ const styles = StyleSheet.create({
   container: {},
 });
 
-export default HotelArround;
+export default Arround;

@@ -4,7 +4,7 @@ import colors from "../../config/colors";
 import SectionHeader from "../header/SectionHeader";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import Apptext from "../others/AppText";
-const Hotelcontactinformation = ({ hotel }, ref) => {
+const contactinformation = ({ item }, ref) => {
   const initialRegion = {
     latitude: 37.78825,
     longitude: -122.4324,
@@ -20,22 +20,18 @@ const Hotelcontactinformation = ({ hotel }, ref) => {
       <View ref={ref} style={styles.container}>
         <Apptext
           iconName="phone"
-          text={hotel.phone}
+          text={item.phone}
           style={styles.addressWrap}
         />
         <Apptext
           iconName="map-marker"
-          text={hotel.address}
+          text={item.address}
           style={styles.addressWrap}
         />
-        <Apptext
-          iconName="train"
-          text={hotel.near}
-          style={styles.addressWrap}
-        />
+        <Apptext iconName="train" text={item.near} style={styles.addressWrap} />
         <Apptext
           iconName="web"
-          text={hotel.website}
+          text={item.website}
           style={styles.addressWrap}
         />
       </View>
@@ -74,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default forwardRef(Hotelcontactinformation);
+export default forwardRef(contactinformation);

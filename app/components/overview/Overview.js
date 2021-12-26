@@ -6,32 +6,32 @@ import Pricepernight from "../others/PricePerNight";
 import Showmore from "../others/ShowMore";
 import Totalreviews from "../review/TotalReviews";
 
-function HotelOverview({ hotel }, ref) {
+function Overview({ item }, ref) {
   const [toggleDescription, setToggleDescription] = useState(false);
   return (
     <>
       <View ref={ref} style={tw`px-4 pt-4 rounded-t-2xl bg-white`}>
         <SectionHeader title="Overview" style={tw`mb-2`} />
         <View style={tw`my-2`}>
-          <Text style={tw`text-gray-700`}>5 Star Hotel</Text>
+          <Text style={tw`text-gray-700`}>5 Star</Text>
           <Totalreviews
-            averageRatings={hotel.averageRatings}
-            totalReviews={hotel.totalReviews}
+            averageRatings={item.averageRatings}
+            totalReviews={item.totalReviews}
           />
         </View>
         <Text
           style={tw`text-lg text-justify`}
           numberOfLines={!toggleDescription ? 4 : 100}
         >
-          {hotel.description}
+          {item.description}
         </Text>
         <Showmore
           onPress={() => setToggleDescription(!toggleDescription)}
           toggled={toggleDescription}
         />
       </View>
-      <Pricepernight style={tw`ml-3`} price={hotel.price} />
+      <Pricepernight style={tw`ml-3`} price={item.price} />
     </>
   );
 }
-export default forwardRef(HotelOverview);
+export default forwardRef(Overview);

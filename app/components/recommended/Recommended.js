@@ -9,14 +9,13 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import SectionHeader from "../header/SectionHeader";
 import colors from "../../config/colors";
 import Favoratebutton from "../others/FavorateButton";
 import StarRating from "react-native-star-rating";
 
-function RecommendedHotels({ data, navigation }) {
-  const [hotelItemWidth, setHoteItemWidth] = useState(() => {
+function Recommended({ data, navigation }) {
+  const [ItemWidth, setItemWidth] = useState(() => {
     const screen = Dimensions.get("screen");
     return screen.width - 80;
   });
@@ -31,12 +30,12 @@ function RecommendedHotels({ data, navigation }) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("hotelDetail", { hotel: item })}
+            onPress={() => navigation.navigate("details", { item: item })}
           >
             <View
               style={[
                 tw`p-2 rounded-lg mr-2 flex-row bg-white h-52`,
-                { width: hotelItemWidth },
+                { width: ItemWidth },
               ]}
             >
               <View style={tw`w-1/3 rounded-lg overflow-hidden h-full`}>
@@ -93,4 +92,4 @@ function RecommendedHotels({ data, navigation }) {
 const styles = StyleSheet.create({
   container: {},
 });
-export default RecommendedHotels;
+export default Recommended;

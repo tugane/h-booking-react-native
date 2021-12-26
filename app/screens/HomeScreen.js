@@ -2,34 +2,11 @@ import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import Screen from "../components/others/Screen";
 import tw from "tailwind-react-native-classnames";
-import HorizontalItems from "../components/others/HorizontalItems";
 import HomeSearch from "../components/search/HomeSearch";
 import HomeHeader from "../components/header/HomeHeader";
-import RecommendedHotels from "../components/recommended/RecommendedHotels";
-import HotelArround from "../components/arround/HotelArround";
-import hotels from "../api/hotels";
-const categories = [
-  {
-    id: 1,
-    name: "All",
-  },
-  {
-    id: 2,
-    name: "Hotel",
-  },
-  {
-    id: 4,
-    name: "Motel",
-  },
-  {
-    id: 3,
-    name: "Apartment",
-  },
-  {
-    id: 5,
-    name: "Villa",
-  },
-];
+import Recommended from "../components/recommended/Recommended";
+import Arround from "../components/arround/Arround";
+import items from "../api/hotels";
 function HomeScreen({ navigation }) {
   return (
     <Screen style={tw`bg-gray-100`}>
@@ -37,14 +14,8 @@ function HomeScreen({ navigation }) {
         <HomeHeader />
         <View style={[tw`p-4`]}>
           <HomeSearch navigation={navigation} />
-          <HorizontalItems
-            itemContainerStyle={tw`mb-6`}
-            items={categories}
-            selectedItem={(item) => console.log(item)}
-            itemStyles={tw`justify-center mr-2 bg-white items-center p-3 rounded-xl`}
-          />
-          <RecommendedHotels navigation={navigation} data={hotels} />
-          <HotelArround navigation={navigation} data={hotels} />
+          <Recommended navigation={navigation} data={items} />
+          <Arround navigation={navigation} data={items} />
         </View>
       </ScrollView>
     </Screen>

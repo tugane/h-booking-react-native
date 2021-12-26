@@ -3,12 +3,12 @@ import { Dimensions, FlatList, Modal, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
 import SectionHeader from "../header/SectionHeader";
 import Room from "./Room";
-import HotelRoomsGallery from "./HotelRoomsGallery";
+import RoomsGallery from "./RoomsGallery";
 const SPACING = 10;
 const screen = Dimensions.get("screen");
 
-function HotelRooms({ route }, ref) {
-  const hotel = route.params.hotel;
+function Rooms({ route }, ref) {
+  const item = route.params.item;
   const [activeIndex, setActiveIndex] = useState(0);
   const [showGallery, setShowGallery] = useState(false);
   const thumbRef = useRef();
@@ -31,7 +31,7 @@ function HotelRooms({ route }, ref) {
         ref={thumbRef}
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={hotel.rooms}
+        data={item.rooms}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item, index }) => (
           <Room
@@ -46,15 +46,15 @@ function HotelRooms({ route }, ref) {
         )}
       />
       <Modal visible={showGallery}>
-        <HotelRoomsGallery
+        <RoomsGallery
           initialActiveIndex={activeIndex}
           onSetActiveIndex={(index) => changeActiveIndex(index)}
           onClose={() => setShowGallery(false)}
-          rooms={hotel.rooms}
+          rooms={item.rooms}
         />
       </Modal>
     </View>
   );
 }
 
-export default forwardRef(HotelRooms);
+export default forwardRef(Rooms);

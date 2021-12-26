@@ -4,13 +4,13 @@ import tw from "tailwind-react-native-classnames";
 import Reviewaverage from "./ReviewAverage";
 import Reviewprogressbar from "./ReviewProgressBar";
 
-const Reviewssummary = ({ hotel }) => {
+const Reviewssummary = ({ item }) => {
   return (
     <View style={{ flexDirection: "row" }}>
       <View style={tw`w-4/12 items-center`}>
         <Reviewaverage
-          averageRatings={hotel.averageRatings}
-          totalReviews={hotel.totalReviews}
+          averageRatings={item.averageRatings}
+          totalReviews={item.totalReviews}
         />
       </View>
       <View style={tw`w-8/12 px-4`}>

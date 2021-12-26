@@ -13,7 +13,7 @@ import colors from "../../config/colors";
 const { height, width } = Dimensions.get("screen");
 const IMAGE_SIZE = 80;
 const SPACING = 10;
-function HotelRoomsGallery({
+function RoomsGallery({
   rooms,
   onClose,
   initialActiveIndex,
@@ -146,4 +146,4 @@ function HotelRoomsGallery({
 const styles = StyleSheet.create({
   container: {},
 });
-export default HotelRoomsGallery;
+export default RoomsGallery;

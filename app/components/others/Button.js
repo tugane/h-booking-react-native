@@ -15,7 +15,7 @@ function Button({
     <TouchableOpacity
       onPress={onPress}
       style={[
-        tw`p-3 my-5 h-12 mx-auto rounded justify-center items-center`,
+        tw`justify-center items-center`,
         { backgroundColor: backgroundColor, width: width, color: color },
         style,
       ]}

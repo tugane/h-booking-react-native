@@ -6,15 +6,15 @@ import Reviewssummary from "./ReviewsSummary";
 import Reviewlist from "./ReviewList";
 import Writereview from "./WriteReview";
 
-const HotelReviews = ({ hotel }, ref) => {
-  const reviews = hotel.reviews;
+const Reviews = ({ item }, ref) => {
+  const reviews = item.reviews;
   return (
     <View ref={ref} style={tw`p-4 pt-0`}>
-      <SectionHeader title="T-Hotel Review" style={tw`my-4`} />
-      <Reviewssummary hotel={hotel} />
+      <SectionHeader title="T- Review" style={tw`my-4`} />
+      <Reviewssummary item={item} />
       <Reviewlist reviews={reviews} />
       <Writereview />
     </View>
   );
 };
-export default forwardRef(HotelReviews);
+export default forwardRef(Reviews);
