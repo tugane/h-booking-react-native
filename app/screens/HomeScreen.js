@@ -1,6 +1,5 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import Screen from "../components/others/Screen";
 import tw from "tailwind-react-native-classnames";
 import HomeSearch from "../components/search/HomeSearch";
 import HomeHeader from "../components/header/HomeHeader";
@@ -9,7 +8,7 @@ import Arround from "../components/arround/Arround";
 import items from "../api/hotels";
 function HomeScreen({ navigation }) {
   return (
-    <Screen style={tw`bg-gray-100`}>
+    <View style={tw`bg-gray-100`}>
       <ScrollView>
         <HomeHeader />
         <View style={[tw`p-4`]}>
@@ -18,7 +17,7 @@ function HomeScreen({ navigation }) {
           <Arround navigation={navigation} data={items} />
         </View>
       </ScrollView>
-    </Screen>
+    </View>
   );
 }
 const styles = StyleSheet.create({

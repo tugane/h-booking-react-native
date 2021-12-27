@@ -7,7 +7,7 @@ function Infomation({ navigation, item }, ref) {
   return (
     <View ref={ref} style={[tw`bg-black`, { maxHeight: 500 }]}>
       <Image style={tw`w-full h-full opacity-90`} source={item.image} />
-      <View style={tw`p-4 pb-32 absolute mt-6 w-full  h-full justify-between`}>
+      <View style={tw`p-4 pb-32 absolute mt-10 w-full  h-full justify-between`}>
         <View style={tw`justify-between flex-row w-full`}>
           <Gobackbutton
             style={tw`rounded-lg bg-gray-700 p-2 opacity-90`}

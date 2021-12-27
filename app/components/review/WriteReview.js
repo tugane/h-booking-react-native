@@ -41,7 +41,13 @@ const Writereview = () => {
           placeholder="Message"
           numberOfLines={5}
         />
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           <Ratingforminput
             name="rating"
             maxStars={5}
@@ -50,7 +56,7 @@ const Writereview = () => {
             starSize={30}
             fullStarColor={colors.yellow}
           />
-          <Formsubmit text="submit" style={{ marginRight: 0 }} />
+          <Formsubmit text="submit" style={{ height: 50, borderRadius: 10 }} />
         </View>
       </Form>
     </View>

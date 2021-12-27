@@ -190,6 +190,7 @@ export default [
   {
     id: 1,
     catgeory_id: 2,
+    favorive: false,
     name: "The Rose Motel",
     price: 120,
     distance: "2.4km",
@@ -208,6 +209,7 @@ export default [
   {
     id: 2,
     catgeory_id: 1,
+    favorive: true,
     name: "MOXY NYC Times SquareOpens in new window",
     price: 420,
     distance: "2.1km",
@@ -226,6 +228,7 @@ export default [
   {
     id: 3,
     catgeory_id: 3,
+    favorive: false,
     name: "Riu Plaza Manhattan Times SquareOpens in new window",
     price: 310,
     distance: "4.5km",
@@ -244,6 +247,7 @@ export default [
   {
     id: 4,
     catgeory_id: 2,
+    favorive: true,
     name: "Hotel Edison Times Square",
     price: 420,
     distance: "1.8km",
@@ -262,6 +266,7 @@ export default [
   {
     id: 9,
     catgeory_id: 4,
+    favorive: true,
     name: "Hotel Times Square",
     price: 420,
     distance: "1.8km",
@@ -280,6 +285,7 @@ export default [
   {
     id: 5,
     catgeory_id: 1,
+    favorive: true,
     name: "Ameritania at Times SquareOpens in new window",
     price: 220,
     distance: "2.3km",
@@ -298,6 +304,7 @@ export default [
   {
     id: 6,
     catgeory_id: 3,
+    favorive: true,
     name: "Freehand New YorkOpens in new window",
     price: 150,
     distance: "3.5km",
@@ -316,6 +323,7 @@ export default [
   {
     id: 7,
     catgeory_id: 4,
+    favorive: false,
     name: "Hotel Edison Times Square",
     price: 420,
     distance: "1.8km",
@@ -334,6 +342,7 @@ export default [
   {
     id: 8,
     catgeory_id: 4,
+    favorive: false,
     name: "Freehand New YorkOpens in new window",
     price: 150,
     distance: "3.5km",
@@ -352,6 +361,7 @@ export default [
   {
     id: 10,
     catgeory_id: 4,
+    favorive: false,
     name: "Non adipisicing cupidatat enim cillum amet.",
     price: 150,
     distance: "3.5km",
@@ -370,6 +380,7 @@ export default [
   {
     id: 11,
     catgeory_id: 4,
+    favorive: true,
     name: "Sit eiusmod nostrud commodo ad adipisicing dolore culpa velit.",
     price: 150,
     distance: "3.5km",
@@ -388,6 +399,7 @@ export default [
   {
     id: 12,
     catgeory_id: 4,
+    favorive: false,
     name: "Voluptate nisi ad est adipisicing.",
     price: 150,
     distance: "3.5km",
@@ -406,6 +418,7 @@ export default [
   {
     id: 13,
     catgeory_id: 4,
+    favorive: false,
     name: "Qui amet Lorem et aute sit excepteur dolor aliqua.",
     price: 150,
     distance: "3.5km",
@@ -424,6 +437,7 @@ export default [
   {
     id: 14,
     catgeory_id: 1,
+    favorive: false,
     name: "Do non irure eiusmod ea dolor quis et amet et ad.",
     price: 420,
     distance: "2.1km",
@@ -442,6 +456,7 @@ export default [
   {
     id: 15,
     catgeory_id: 1,
+    favorive: false,
     name: "MOXY NYC Times SquareOpens in new window",
     price: 420,
     distance: "2.1km",
@@ -460,6 +475,7 @@ export default [
   {
     id: 16,
     catgeory_id: 1,
+    favorive: false,
     name: "Nostrud esse dolor id do.",
     price: 420,
     distance: "2.1km",
@@ -478,6 +494,7 @@ export default [
   {
     id: 17,
     catgeory_id: 1,
+    favorive: true,
     name: "Cillum esse voluptate duis pariatur",
     price: 420,
     distance: "2.1km",
@@ -496,6 +513,7 @@ export default [
   {
     id: 18,
     catgeory_id: 1,
+    favorive: true,
     name: "Veniam do ea cupidatat aute ut adipisicing laborum.",
     price: 420,
     distance: "2.1km",
@@ -514,6 +532,7 @@ export default [
   {
     id: 19,
     catgeory_id: 1,
+    favorive: false,
     name: "Ullamco enim laborum quis aute.",
     price: 420,
     distance: "2.1km",

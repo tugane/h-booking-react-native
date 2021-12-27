@@ -13,6 +13,7 @@ const SPACING = 20;
 import allItems from "../api/hotels";
 import Itemseparetor from "../components/others/ItemSeparetor";
 import Button from "../components/others/Button";
+import Listitem from "../components/others/ListItem";
 
 const CategorydetailsScreen = ({ navigation, route }) => {
   const category = route.params.item;
@@ -29,7 +30,7 @@ const CategorydetailsScreen = ({ navigation, route }) => {
               style={styles.backButton}
               color={colors.white}
               onPress={() => navigation.goBack()}
-              name="close"
+              name="arrow-left"
             />
             <Image source={category.image} style={styles.image} />
             <View style={styles.textWrap}>
@@ -44,38 +45,17 @@ const CategorydetailsScreen = ({ navigation, route }) => {
       data={items}
       keyExtractor={(item) => item.id.toString()}
       ItemSeparatorComponent={() => (
-        <Itemseparetor style={{ paddingLeft: SPACING * 3 + 5 }} />
+        <Itemseparetor style={{ paddingLeft: SPACING * 4 }} />
       )}
       renderItem={({ item }) => {
         return (
-          <View style={styles.contaner}>
-            <View style={styles.item}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("details", { item: item })}
-                style={{ flexDirection: "row", width: "65%" }}
-              >
-                <Image style={styles.itemImage} source={item.image} />
-                <View style={styles.itemTextWrap}>
-                  <Text style={styles.itemTitle} numberOfLines={2}>
-                    {item.name}
-                  </Text>
-                  <Text style={styles.itemDescription} numberOfLines={1}>
-                    {item.description}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <Button
-                text="Book"
-                textStyle={{ fontSize: SPACING - 5 }}
-                style={{
-                  backgroundColor: colors.primary,
-                  paddingHorizontal: SPACING,
-                  height: SPACING * 2,
-                  borderRadius: SPACING / 2,
-                }}
-              />
-            </View>
-          </View>
+          <Listitem
+            itemContainerStyle={{ paddingHorizontal: SPACING / 2 }}
+            title={item.name}
+            image={item.image}
+            subTitle={item.description}
+            onPress={() => navigation.navigate("details", { item: item })}
+          />
         );
       }}
     />
@@ -83,17 +63,13 @@ const CategorydetailsScreen = ({ navigation, route }) => {
 };
 
 const styles = StyleSheet.create({
-  contaner: {
-    paddingHorizontal: SPACING / 2,
-    // height: SPACING * 3,
-  },
   backButton: {
     position: "absolute",
     top: SPACING * 3,
-    right: SPACING,
+    left: SPACING,
     zIndex: 1,
-    backgroundColor: colors.black,
-    borderRadius: SPACING,
+    backgroundColor: colors.medium,
+    borderRadius: SPACING / 5,
     padding: SPACING / 4,
   },
   image: {
@@ -115,29 +91,6 @@ const styles = StyleSheet.create({
     color: colors.medium,
     fontSize: SPACING - 3,
     fontWeight: "400",
-  },
-  item: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  itemImage: {
-    height: SPACING * 2 + 10,
-    width: SPACING * 2 + 10,
-    borderRadius: SPACING / 2,
-  },
-  itemTextWrap: {
-    paddingHorizontal: SPACING / 2,
-    justifyContent: "space-between",
-  },
-  itemTitle: {
-    fontWeight: "500",
-    fontSize: SPACING - 5,
-  },
-  itemDescription: {
-    color: colors.medium,
-    fontSize: SPACING - 5,
   },
 });
 

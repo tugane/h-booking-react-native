@@ -11,6 +11,7 @@ import categories from "../api/categories";
 import Screen from "../components/others/Screen";
 import colors from "../config/colors";
 import { LinearGradient } from "expo-linear-gradient";
+import Screentitle from "../components/others/ScreenTitle";
 
 const items = categories;
 
@@ -18,7 +19,7 @@ function DiscoverScreen({ navigation }) {
   return (
     <Screen>
       <View style={styles.container}>
-        <Text style={styles.header}>Discover</Text>
+        <Screentitle title="Discover" />
         <FlatList
           showsVerticalScrollIndicator={false}
           data={items}
@@ -53,11 +54,6 @@ function DiscoverScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-  },
-  header: {
-    fontSize: 40,
-    fontWeight: "700",
-    textTransform: "capitalize",
   },
   item: {
     marginVertical: 10,

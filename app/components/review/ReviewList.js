@@ -69,11 +69,9 @@ const Reviewlist = ({ reviews }) => {
           }}
         />
       </View>
-      <FlatList
-        data={getData()}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Reviewlistitem item={item} />}
-      />
+      {getData().map((item) => {
+        return <Reviewlistitem key={item.id} item={item} />;
+      })}
       {reviews.length - limit == 0 ? (
         <TouchableOpacity
           onPress={() => setLimit(initialLimit)}

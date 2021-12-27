@@ -12,7 +12,7 @@ const Itemseparetor = ({ style }) => {
 
 const styles = StyleSheet.create({
   separator: {
-    padding: 10,
+    padding: 5,
   },
   line: {
     borderWidth: 0.4,

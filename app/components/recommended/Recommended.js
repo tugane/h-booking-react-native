@@ -23,6 +23,7 @@ function Recommended({ data, navigation }) {
     <>
       <SectionHeader title="Recommended" />
       <FlatList
+        disableVirtualization={true}
         showsHorizontalScrollIndicator={false}
         horizontal
         contentContainerStyle={tw`flex-row py-4`}

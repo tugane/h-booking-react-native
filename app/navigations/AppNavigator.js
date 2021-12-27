@@ -1,10 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FavoriteScreen from "../screens/FavoriteScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import HomeNavigator from "./HomeNavigator";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Discovernavigator from "./DiscoverNavigator";
+import Favoritenavigator from "./FavoriteNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,13 +17,13 @@ function AppNavigator() {
       }}
     >
       <Tab.Screen
-        name="Nearby"
+        name="Home"
         component={HomeNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="mapbox" size={size} color={color} />
+            <MaterialCommunityIcons name="home" size={size} color={color} />
           ),
-          tabBarLabel: "Nearby",
+          tabBarLabel: "Home",
           tabBarLabelStyle: { fontSize: 13 },
         }}
       />
@@ -44,7 +44,7 @@ function AppNavigator() {
       />
       <Tab.Screen
         name="Favorite"
-        component={FavoriteScreen}
+        component={Favoritenavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons

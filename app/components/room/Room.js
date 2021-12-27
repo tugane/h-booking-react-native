@@ -40,13 +40,13 @@ const Room = ({ onImagePress, onBook, roomItemWidth, item, SPACING }) => {
           {item.title}
         </Text>
       </TouchableOpacity>
-      <View style={tw`w-full flex-row justify-between`}>
+      <View style={tw`w-full flex-row justify-between items-center`}>
         <View style={tw`w-4/12`}>
           <Pricepernight price={item.price} />
         </View>
         <Button
           onPress={() => onBook(item)}
-          style={tw`w-6/12 text-white mb-0 mr-0`}
+          style={tw`w-6/12 text-white mb-0 mr-0 rounded-lg h-14`}
           backgroundColor={colors.primary}
           text="Book"
         />

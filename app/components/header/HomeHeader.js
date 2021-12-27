@@ -11,7 +11,7 @@ function HomeHeader() {
           source={require("../../assets/hotels/h6.jpg")}
         />
       </View>
-      <View style={tw`p-4 absolute w-full h-full`}>
+      <View style={tw`p-4 absolute w-full h-full mt-10`}>
         <View style={tw`flex-row justify-between `}>
           <View>
             <Text style={[tw`text-2xl font-bold text-gray-100`]}>

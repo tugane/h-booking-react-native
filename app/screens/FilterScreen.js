@@ -97,7 +97,8 @@ function FilterScreen() {
           />
         </View>
         <Button
-          backgroundColor={colors.secondary}
+          style={{ height: 50, borderRadius: 10 }}
+          backgroundColor={colors.primary}
           width="100%"
           text="Continue"
           color={colors.white}
